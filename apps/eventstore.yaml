@@ -1,0 +1,42 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eventstore-deployment
+spec:
+  selector:
+    matchLabels:
+      app: eventstore
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: eventstore
+    spec:
+      containers:
+        - name: eventstore
+          image: eventstore/eventstore:5.0.9-xenial
+          ports:
+            - containerPort: 2113
+            - containerPort: 1113
+          env:
+            - name: EVENTSTORE_DEV
+              value: "true"
+            - name: EVENTSTORE_RUN_PROJECTIONS
+              value: "All"
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: eventstore-service
+spec:
+  type: NodePort
+  selector:
+    app: eventstore
+  ports:
+    - name: "internal-http"
+      protocol: TCP
+      port: 2113
+      targetPort: 2113
+      nodePort: 30013
+

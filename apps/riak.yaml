@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: /snap/kompose/1/./kompose-linux-amd64 convert
+    kompose.version: 1.18.0 (06a2e56)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: riak
+  name: riak
+spec:
+  ports:
+  - name: "8087"
+    port: 8087
+    targetPort: 8087
+  - name: "8098"
+    port: 8098
+    targetPort: 8098
+  selector:
+    io.kompose.service: riak
+status:
+  loadBalancer: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: riak
+  labels:
+    app: riak
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: riak
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: riak
+    spec:
+      containers:
+      - image: mkrogemann/riak-standalone
+        name: riak
+        ports:
+        - containerPort: 8087
+        - containerPort: 8098
+        resources: {}
+      restartPolicy: Always
+status: {}
+
+

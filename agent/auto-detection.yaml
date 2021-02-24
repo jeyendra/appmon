@@ -1,0 +1,326 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: opsramp-agent
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: agent-custom
+  labels:
+    name: agent-custom
+  namespace: opsramp-agent
+data:
+  auto-container-detection.yaml: |-
+    ---
+    - name: cassandra
+      container-checks:
+        image-check:
+          - cassandra
+        port-check:
+          - 9042
+          - 9160
+          - 7000
+      mon-type: "jmx"
+      misc:
+        jmx-port: "7199"
+    - name: hbase
+      container-checks:
+        image-check:
+          - hbase
+        port-check:
+          - 60010
+      mon-type: "jmx"
+      misc:
+        jmx-port: "7199"
+    - name: activemq
+      container-checks:
+        image-check:
+          - activemq
+        port-check:
+          - 61616
+      mon-type: "jmx"
+      misc:
+        jmx-port: "1099"
+    - name: kafka
+      container-checks:
+        image-check:
+          - kafka
+        port-check:
+          - 9092
+      mon-type: "jmx"
+      misc:
+        jmx-port: "5199"
+    - name: tomcat
+      container-checks:
+        image-check:
+          - tomcat
+        port-check:
+          - 8080
+      mon-type: "jmx"
+      misc:
+        jmx-port: "7199"
+    - name: zookeeper
+      container-checks:
+        image-check:
+          - zookeeper
+          - digitalwonderland/zookeeper
+        port-check:
+          - 2181
+      mon-type: "jmx"
+      misc:
+        jmx-port: "5199"
+    - name: websphere
+      container-checks:
+        image-check:
+          - websphere
+        port-check:
+          - 9043
+          - 9060
+      mon-type: "jmx"
+      misc:
+        jmx-port: "7199"
+    - name: weblogic
+      container-checks:
+        image-check:
+          - weblogic
+        port-check:
+          - 7001
+      mon-type: "jmx"
+      misc:
+        jmx-port: "7199"
+    - name: solr
+      container-checks:
+        image-check:
+          - solr
+        port-check:
+          - 8983
+      mon-type: "jmx"
+      misc:
+        jmx-port: "18983"
+    - name: elasticsearch
+      container-checks:
+        image-check:
+          - elasticsearch
+        port-check:
+          - 9200
+          - 9300
+    - name: mysql
+      container-checks:
+        image-check:
+          - mysql
+        port-check:
+          - 3306
+    - name: redis
+      container-checks:
+        image-check:
+          - redis
+        port-check:
+          - 6379
+      misc:
+        socket-timeout: "10"
+    - name: k8s-apiserver
+      container-checks:
+        image-check:
+          - kube-apiserver
+        uri-check:
+          - "https://<KUBERNETES_SERVICE_HOST>:443/metrics"
+    - name: k8s-controller
+      container-checks:
+        image-check:
+          - kube-controller-manager
+        uri-check:
+          - "https://kube-controller-manager-<KUBERNETES_CONTROLLER_HOST>:10252/metrics"
+    - name: k8s-scheduler
+      container-checks:
+        image-check:
+          - kube-scheduler
+        uri-check:
+          - "https://kube-scheduler-<KUBERNETES_CONTROLLER_HOST>:10251/metrics"
+    - name: k8s-kube-state
+      container-checks:
+        image-check:
+          - kube-state-metrics
+        uri-check:
+          - "http://<kube-state-metrics-service-ip>:<kube-state-metrics-service-port>/metrics"
+    - name: k8s-metrics-server
+      container-checks:
+        image-check:
+          - metrics-server
+        uri-check:
+          - "http://<kube-metrics-server-service-ip>:<kube-metrics-server-service-port>/metrics"
+    - name: k8s-coredns
+      container-checks:
+        image-check:
+          - coredns
+        uri-check:
+          - "http://<core-dns-pod-ip>:<core-dns-pod-port>/metrics"
+    - name: k8s-kubedns
+      container-checks:
+        image-check:
+          - kube-dns
+        uri-check:
+          - "http://<kube-dns-pod-ip>:<kube-dns-pod-port>/metrics"
+    - name: nginx
+      container-checks:
+        image-check:
+          - nginx
+        port-check:
+          - 80
+    - name: ceph
+      container-checks:
+        image-check:
+          - daemon
+      misc:
+        cephbinary: "/usr/bin/ceph"
+        socketdir: "/var/run/ceph"
+    - name: hdfs-namenode
+      container-checks:
+        image-check:
+          - namenode
+        port-check:
+          - 50070
+          - 9870
+    - name: hdfs-datanode
+      container-checks:
+        image-check:
+          - datanode
+        port-check:
+          - 50075
+          - 9864
+    - name: memcached
+      container-checks:
+        image-check:
+          - memcached
+        port-check:
+          - 11211
+    - name: mongodb
+      container-checks:
+        image-check:
+          - mongo
+        port-check:
+          - 27017
+          - 27018
+          - 27019
+    - name: squid
+      container-checks:
+        image-check:
+          - squid
+        port-check:
+          - 3128
+    - name: spark
+      container-checks:
+        image-check:
+          - spark
+        port-check:
+          - 8080
+    - name: rabbitmq
+      container-checks:
+        image-check:
+          - rabbitmq
+        port-check:
+          - 15672
+          - 5672
+      misc:
+        queue-names: ""
+    - name: lighttpd
+      container-checks:
+        image-check:
+          - lighttpd
+        port-check:
+          - 80
+    - name: monit
+      container-checks:
+        image-check:
+          - monit
+        port-check:
+          - 2812
+    - name: apache
+      container-checks:
+        image-check:
+          - apache
+        port-check:
+          - 80
+    - name: postgresql
+      container-checks:
+        image-check:
+          - postgres
+        port-check:
+          - 5432
+    - name: cockroachdb
+      container-checks:
+        image-check:
+          - cockroach
+        port-check:
+          - 26257
+          - 8080
+    - name: oracle
+      container-checks:
+        image-check:
+          - oracle
+        port-check:
+          - 1521
+    - name: haproxy
+      container-checks:
+        image-check:
+          - haproxy
+        port-check:
+          - 32700
+    - name: eventstore
+      container-checks:
+        image-check:
+          - eventstore
+        port-check:
+          - 2113
+      misc:
+        proto: "https"
+    - name: wildfly
+      container-checks:
+        image-check:
+          - wildfly
+        port-check:
+          - 8080
+          - 9990
+    - name: nginx-ingress-controller
+      container-checks:
+        image-check:
+          - nginx-ingress-controller
+        port-check:
+          - 10254
+          - 80
+    - name: couchdb
+      container-checks:
+        image-check:
+          - couchdb
+        port-check:
+          - 5984
+    - name: riak
+      container-checks:
+        image-check:
+          - riak
+        port-check:
+          - 8098
+    - name: kong
+      container-checks:
+        image-check:
+          - kong
+        port-check:
+          - 8001
+    - name: linkerd
+      container-checks:
+        image-check:
+          - controller
+        port-check:
+          - 8085
+    - name: pgbouncer
+      container-checks:
+        image-check:
+          - pgbouncer
+        port-check:
+          - 6432
+    - name: etcd
+      container-checks:
+        image-check:
+          - etcd
+        port-check:
+          - 2379 

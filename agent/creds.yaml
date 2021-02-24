@@ -1,0 +1,60 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: opsramp-agent
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: agent-creds
+  labels:
+    name: agent-creds
+  namespace: opsramp-agent
+data:
+  creds.yaml: |-
+    eventstore:
+      - name: eventstore
+        user: admin
+        pwd: changeit
+        encoding-type: plain
+    mysql:
+      - name: mysql
+        user: root
+        pwd: Pass1234
+        encoding-type: plain
+        #        labels:
+        #          io.kubernetes.container.name: mysql
+    cassandra:
+      - name: cassandra
+        user: cassandra
+        pwd: cassandra
+        encoding-type: plain
+        labels:
+          io.kubernetes.container.name: cassandra
+    mongodb:
+      - name: mongodb
+        user: root
+        pwd: example
+        encoding-type: plain
+        #        labels:
+        #          io.kubernetes.container.name: mongodb
+    postgresql:
+      - name: postgresql
+        user: root
+        pwd: Pass1234
+        encoding-type: plain
+    couchdb:
+      - name: couchdb
+        user: admin
+        pwd: Pass1234
+        encoding-type: plain
+    pgbouncer:
+      - name: pgbouncer
+        user: postgres
+        pwd: Pass1234
+        encoding-type: plain
+    rabbitmq:
+      - name: rabbitmq
+        user: guest
+        pwd: guest
+        encoding-type: plain

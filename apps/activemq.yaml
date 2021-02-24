@@ -1,0 +1,71 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: amq-svc
+  labels:
+    app: amq
+spec:
+  ports:
+  - port: 61616
+    protocol: TCP
+    name: broker
+  - port: 8161
+    protocol: TCP
+    name: admin
+  selector:
+    app: amq
+---
+apiVersion: v1
+kind: Service
+metadata:  
+  name: amq-np-svc
+spec:
+  selector:    
+    app: amq
+  type: NodePort
+  ports:  
+  - name: jmx
+    port: 1099
+    targetPort: 1099
+    nodePort: 30036
+    protocol: TCP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: activemq
+  labels:
+    app: activemq
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: activemq
+  template:
+    metadata:
+      labels:
+        app: activemq
+    spec:
+      containers:
+        - image: antonw/activemq-jmx
+          name: activemq
+          ports:
+            - containerPort: 8161
+              name: admin
+            - containerPort: 61616
+              name: broker
+            - containerPort: 5672
+              name: amqp
+            - containerPort: 61613
+              name: stomp
+            - containerPort: 1883
+              name: mqtt
+            - containerPort: 61614
+              name: websocket
+            - containerPort: 1099
+              name: jmx
+          env:
+            - name: ACTIVEMQ_RMI_SERVER_HOSTNAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP

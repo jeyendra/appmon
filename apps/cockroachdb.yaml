@@ -1,0 +1,112 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: /snap/kompose/1/./kompose-linux-amd64 convert
+    kompose.version: 1.18.0 (06a2e56)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: roach1
+  name: roach1
+spec:
+  ports:
+  - name: "26257"
+    port: 26257
+    targetPort: 26257
+  - name: "8080"
+    port: 8080
+    targetPort: 8080
+  selector:
+    io.kompose.service: roach1
+status:
+  loadBalancer: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: roach1
+  labels:
+    app: roach1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: roach1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: roach1
+    spec:
+      containers:
+      - args:
+        - start
+        - --insecure
+        image: cockroachdb/cockroach:v2.0.5
+        name: cockroach1
+        ports:
+        - containerPort: 26257
+        - containerPort: 8080
+        resources: {}
+      restartPolicy: Always
+status: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: roach2
+  labels:
+    app: roach2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: roach2
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: roach2
+    spec:
+      containers:
+      - args:
+        - start
+        - --insecure
+        - --join=roach1
+        image: cockroachdb/cockroach:v2.0.5
+        name: cockroach2
+        resources: {}
+      restartPolicy: Always
+status: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: roach3
+  labels:
+    app: roach3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: roach3
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: roach3
+    spec:
+      containers:
+      - args:
+        - start
+        - --insecure
+        - --join=roach1
+        image: cockroachdb/cockroach:v2.0.5
+        name: cockroach3
+        resources: {}
+      restartPolicy: Always
+status: {}

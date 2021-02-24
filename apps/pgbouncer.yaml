@@ -1,0 +1,127 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: postgres
+  name: postgres
+spec:
+  ports:
+    - name: "5432"
+      port: 5432
+      targetPort: 5432
+  selector:
+    io.kompose.service: postgres
+status:
+  loadBalancer: {}
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: postgres
+  name: postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: postgres
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: postgres
+    spec:
+      containers:
+        - env:
+            - name: POSTGRES_PASSWORD
+              value: Pass1234
+          image: postgres:latest
+          name: postgres
+          ports:
+            - containerPort: 5432
+          resources: {}
+      restartPolicy: Always
+status: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: pgbouncer
+  name: pgbouncer
+spec:
+  ports:
+    - name: "6432"
+      port: 6432
+      targetPort: 6432
+  selector:
+    io.kompose.service: pgbouncer
+status:
+  loadBalancer: {}
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: pgbouncer
+  name: pgbouncer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: pgbouncer
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: pgbouncer
+    spec:
+      containers:
+        - env:
+            - name: DATABASES_HOST
+              value: postgres
+            - name: DATABASES_PASSWORD
+              value: Pass1234
+            - name: DATABASES_PORT
+              value: "5432"
+            - name: DATABASES_USER
+              value: postgres
+            - name: PGBOUNCER_LISTEN_PORT
+              value: "6432"
+          image: pgbouncer/pgbouncer
+          name: pgbouncer
+          ports:
+            - containerPort: 6432
+          resources: {}
+      restartPolicy: Always
+status: {}
+---
+

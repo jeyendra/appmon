@@ -1,0 +1,66 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: couchdb-1
+  name: couchdb-1
+spec:
+  ports:
+    - name: "5984"
+      port: 5984
+      targetPort: 5984
+    - name: "5986"
+      port: 5986
+      targetPort: 5986
+  selector:
+    io.kompose.service: couchdb-1
+status:
+  loadBalancer: {}
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: couchdb-1
+  name: couchdb-1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: couchdb-1
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: couchdb-1
+    spec:
+      containers:
+        - env:
+            - name: COUCHDB_PASSWORD
+              value: Pass1234
+            - name: COUCHDB_USER
+              value: admin
+            - name: NODENAME
+              value: couchdb-1.example.com
+          image: couchdb
+          name: couchdb-1
+          ports:
+            - containerPort: 5984
+            - containerPort: 5986
+          resources: {}
+      restartPolicy: Always
+status: {}
+
