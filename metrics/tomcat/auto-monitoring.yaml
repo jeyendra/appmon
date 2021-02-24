@@ -1,0 +1,29 @@
+plugin-name: "Tomcat"
+freq_secs: "60"
+metrics:
+  - tomcat_maxThreads
+  - tomcat_currentThreadCount
+  - tomcat_currentThreadsBusy
+  - tomcat_jspCount
+  - tomcat_jspReloadCount
+  - tomcat_Servlet_requestCount
+  - tomcat_Servlet_errorCount
+  - tomcat_Servlet_processingTime
+  - tomcat_bytesSent
+  - tomcat_bytesReceived
+  - tomcat_errorCount
+  - tomcat_requestCount
+  - tomcat_maxTime
+  - tomcat_processingTime
+  - tomcat_jvm_HeapMemoryUsage_commited
+  - tomcat_jvm_HeapMemoryUsage_used
+  - tomcat_jvm_NonHeapMemoryUsage_commited
+  - tomcat_jvm_NonHeapMemoryUsage_used
+  - tomcat_jvm_OpenFileDescriptorCount
+  - tomcat_jvm_ThreadCount
+  - tomcat_jvm_Uptime
+  - tomcat_Cache_accessCount
+  - tomcat_cache_hitsCount
+  - tomcat_StringCache_hitsCount
+  - tomcat_StringCache_accessCount
+  - tomcat_activeSessions

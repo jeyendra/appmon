@@ -1,0 +1,8 @@
+  plugin-name: "lighthouse"
+  freq_secs: "60"
+  metrics:
+  - lighthouse_categories_performance
+  - lighthouse_categories_accessibility
+  - lighthouse_categories_best_practices
+  - lighthouse_categories_seo
+  - lighthouse_categories_pwa

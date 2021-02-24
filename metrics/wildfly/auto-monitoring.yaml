@@ -1,0 +1,34 @@
+plugin-name: "wildfly"
+freq_secs: "60"
+metrics:
+  - wildfly_datasources_pool_in_use_count
+  - wildfly_datasources_pool_wait_count
+  - wildfly_datasources_pool_idle_count
+  - wildfly_datasources_pool_xacommit_count
+  - wildfly_datasources_pool_active_count
+  - wildfly_datasources_pool_xarollback_count
+  - wildfly_datasources_pool_xarecover_count
+  - wildfly_datasources_jdbc_prepared_statement_cache_current_size
+  - wildfly_datasources_jdbc_prepared_statement_cache_miss_count
+  - wildfly_datasources_jdbc_prepared_statement_cache_hit_count
+  - wildfly_transactions_number_of_aborted_transactions_total
+  - wildfly_transactions_number_of_application_rollbacks_total
+  - wildfly_transactions_number_of_committed_transactions_total
+  - wildfly_transactions_number_of_heuristics_total
+  - wildfly_transactions_number_of_inflight_transactions
+  - wildfly_transactions_number_of_nested_transactions_total
+  - wildfly_transactions_number_of_resource_rollbacks_total
+  - wildfly_transactions_number_of_system_rollbacks_total
+  - wildfly_transactions_number_of_timed_out_transactions_total
+  - wildfly_transactions_number_of_transactions_total
+  - wildfly_undertow_error_count_total
+  - wildfly_undertow_processing_time_total_seconds
+  - wildfly_undertow_request_count_total
+  - wildfly_undertow_bytes_sent_total_bytes
+  - wildfly_undertow_bytes_received_total
+  - wildfly_undertow_active_sessions
+  - wildfly_undertow_expired_sessions_total
+  - wildfly_undertow_sessions_created_total
+  - wildfly_undertow_rejected_sessions_total
+  - wildfly_undertow_session_max_alive_time_seconds
+  - wildfly_undertow_session_avg_alive_time_seconds

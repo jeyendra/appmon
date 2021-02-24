@@ -1,0 +1,5 @@
+  plugin-name: "traefik"
+  freq_secs: "60"
+  metrics:
+  - traefik_total_status_code_count
+  - traefik_total_count

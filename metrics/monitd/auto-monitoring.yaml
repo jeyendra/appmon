@@ -1,0 +1,4 @@
+plugin-name: "Monitd"
+freq_secs: "60"
+metrics:
+  - monitd_processes

@@ -1,0 +1,10 @@
+plugin-name: "K8sdns"
+freq_secs: "60"
+metrics:
+  - kube_kubedns_cachemiss_count
+  - kube_kubedns_error_count
+  - kube_kubedns_request_count
+  - kube_kubedns_request_duration_seconds_count
+  - kube_kubedns_request_duration_seconds_sum
+  - kube_kubedns_response_size_bytes_count
+  - kube_kubedns_response_size_bytes_sum

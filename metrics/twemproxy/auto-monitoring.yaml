@@ -1,0 +1,23 @@
+  plugin-name: "twemproxy"
+  freq_secs: "60"
+  metrics:
+  - twemproxy_curr_connections
+  - twemproxy_total_connections
+  - twemproxy_client_eof
+  - twemproxy_client_err
+  - twemproxy_client_connections
+  - twemproxy_server_ejects
+  - twemproxy_forward_error
+  - twemproxy_fragments
+  - twemproxy_in_queue
+  - twemproxy_out_queue
+  - twemproxy_in_queue_bytes
+  - twemproxy_out_queue_bytes
+  - twemproxy_server_connections
+  - twemproxy_server_err
+  - twemproxy_server_timedout
+  - twemproxy_server_eof
+  - twemproxy_responses
+  - twemproxy_requests
+  - twemproxy_response_bytes
+  - twemproxy_request_bytes

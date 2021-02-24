@@ -1,0 +1,56 @@
+plugin-name: "redis"
+freq_secs: "60"
+metrics:
+  - redis_uptime
+  - redis_active_defrag_running
+  - redis_active_defrag_hits
+  - redis_active_defrag_misses
+  - redis_active_defrag_key_hits
+  - redis_active_defrag_key_misses
+  - redis_aof_last_rewrite_time_sec
+  - redis_aof_current_size
+  - redis_aof_buffer_length
+  - redis_net_clients
+  - redis_net_slaves
+  - redis_net_rejected
+  - redis_net_commands
+  - redis_net_commands_instantaneous_ops_per_sec
+  - redis_net_accepted
+  - redis_net_maxclients
+  - redis_clients_blocked
+  - redis_clients_biggest_input_buf
+  - redis_clients_longest_output_list
+  - redis_keys_evicted
+  - redis_keys_expired
+  - redis_keys_total
+  - redis_perf_latest_fork_usec
+  - redis_pubsub_channels
+  - redis_pubsub_patterns
+  - redis_rdb_changes_since_last
+  - redis_rdb_last_bgsave_time
+  - redis_mem_fragmentation_ratio
+  - redis_mem_used
+  - redis_mem_lua
+  - redis_mem_peak
+  - redis_mem_rss
+  - redis_mem_startup
+  - redis_mem_overhead
+  - redis_mem_maxmemory
+  - redis_cpu_sys
+  - redis_cpu_sys_children
+  - redis_cpu_user
+  - redis_cpu_user_children
+  - redis_stats_keyspace_hits
+  - redis_stats_keyspace_misses
+# If a load operation is on-going, these additional metrics will be work
+  - redis_loading_total
+  - redis_loading_loaded
+  - redis_loading_loaded_perc
+  - redis_loading_eta_seconds
+# These Metrics Will work if you make use of a redis cluster
+  - redis_replication_last_io_seconds_ago
+  - redis_replication_sync_left_bytes
+  - redis_replication_backlog_histlen
+  - redis_replication_master_repl_offset
+  - redis_replication_slave_repl_offset
+  - redis_replication_link_status

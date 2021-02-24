@@ -1,0 +1,18 @@
+  plugin-name: "k8s-controller"
+  freq_secs: "60"
+  metrics:
+  - kube_controller_queue_process_duration
+  - kube_controller_queue_work_unfinished_duration
+  - kube_controller_queue_work_longest_duration
+  - kube_controller_queue_queue_duration
+  - kube_controller_nodes_count
+  - kube_controller_nodes_unhealthy
+  - kube_controller_nodes_evictions
+  - kube_controller_queue_depth
+  - kube_controller_queue_adds
+  - kube_controller_queue_retries
+  - kube_controller_rate_limiter_use
+  - kube_controller_goroutines
+  - kube_controller_threads
+  - kube_controller_max_fds
+  - kube_controller_open_fds

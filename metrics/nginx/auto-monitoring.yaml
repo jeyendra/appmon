@@ -1,0 +1,14 @@
+plugin-name: "nginx"
+freq_secs: "60"
+metrics:
+  - nginx_connections_active
+  - nginx_connections_reading
+  - nginx_connections_writing
+  - nginx_connections_waiting
+  - nginx_requests_handled
+  - nginx_requests_rate
+  - nginx_connections_rate
+  - nginx_perconnections_requests
+  - nginx_response_time
+  - nginx_connections_dropped
+

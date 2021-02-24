@@ -1,0 +1,16 @@
+  plugin-name: "k8s-metrics-server"
+  freq_secs: "60"
+  metrics:
+  - kube_metrics_go_gc_duration_seconds
+  - kube_metrics_authenticated_user_requests
+  - kube_metrics_go_goroutines
+  - kube_metrics_manager_tick_duration
+  - kube_metrics_scraper_duration
+  - kube_metrics_scraper_last_time
+  - kube_metrics_go_gc_duration_seconds_quantile
+  - kube_metrics_kubelet_summary_request_duration
+  - kube_metrics_kubelet_summary_scrapes_total
+  - kube_metrics_process_max_fds
+  - kube_metrics_process_open_fds
+  - kube_metrics_process_cpu_seconds_total
+

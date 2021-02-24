@@ -1,0 +1,8 @@
+plugin-name: "harbor"
+freq_secs: "60"
+metrics:
+  - harbor_storage_free
+  - harbor_storage_total
+  - harbor_public_repo_count
+  - harbor_private_repo_count
+  - harbor_total_project_count

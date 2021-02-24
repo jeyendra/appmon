@@ -1,0 +1,23 @@
+  plugin-name: "Jboss"
+  freq_secs: "60"
+  metrics:
+  - jboss.module_loader.link_time
+  - jboss.module_loader.load_time
+  - jboss.jvm.gc.collection_time
+  - jboss.jvm.mem.heap_committed
+  - jboss.jvm.mem.non_heap_committed
+  - jboss.jvm.mem.non_heap_used
+  - jboss.jvm.threads
+  - jboss.module_loader.class_define_time
+  - jboss.module_loader.scan_count
+  - jboss.jvm.mem.heap_max
+  - jboss.jvm.mem.heap_used
+  - jboss.jvm.mem.non_heap_max
+  - jboss.jvm.uptime
+  - jboss.module_loader.loadedModule_count
+  - jboss.jvm.gc.collection_count
+  - jboss.jvm.open.fds
+  - jboss.module_loader.race_count
+  - jboss.jvm.mem.heap_init
+  - jboss.jvm.mem.non_heap_init
+  - jboss.module_loader.class_count

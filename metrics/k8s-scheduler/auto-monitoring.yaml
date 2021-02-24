@@ -1,0 +1,27 @@
+plugin-name: "K8sScheduler"
+freq_secs: "60"
+metrics:
+  - kube_scheduler_binding_duration_seconds
+  - kube_scheduler_cache_lookups
+  - kube_scheduler_client_http_requests
+  - kube_scheduler_go_gc_duration_seconds
+  - kube_scheduler_go_gc_duration_seconds_quantile
+  - kube_scheduler_goroutines
+  - kube_scheduler_process_max_fds
+  - kube_scheduler_process_open_fds
+  - kube_scheduler_pod_preemption_victims
+  - kube_scheduler_pod_preemption_attempts
+  - kube_scheduler_schedule_attempts
+  - kube_scheduler_scheduling_algorithm_duration_seconds
+  - kube_scheduler_scheduling_algorithm_predicate_evaluation_duration
+  - kube_scheduler_scheduling_algorithm_preemption_evaluation_duration
+  - kube_scheduler_scheduling_algorithm_priority_evaluation_duration
+  - kube_scheduler_e2e_scheduling_duration
+  - kube_scheduler_scheduling_duration_seconds
+  - kube_scheduler_scheduling_duration_quantile
+  - kube_scheduler_go_threads
+  - kube_scheduler_volume_scheduling_duration
+#  Deprecated from 1.14
+#  - kube_scheduler_binding_latency_microseconds
+#  - kube_scheduler_http_requests_duration
+#  - kube_scheduler_scheduling_algorithm_latency_microseconds

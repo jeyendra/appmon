@@ -1,0 +1,13 @@
+  plugin-name: "network"
+  freq_secs: "60"
+  metrics:
+#Host level Metrics 
+  - network_interface_status
+  - network_interface_traffic_in
+  - network_interface_traffic_out
+  - network_interface_packets_in
+  - network_interface_packets_out
+  - network_interface_errors_in
+  - network_interface_errors_out
+  - network_interface_discards_in
+  - network_interface_discards_out

@@ -1,0 +1,22 @@
+  plugin-name: "Weblogic"
+  freq_secs: "60"
+  metrics:
+  - weblogic.cache.hits_count
+  - weblogic.jvm.gc.collection_time
+  - weblogic.jvm.mem.non_heap_committed
+  - weblogic.jvm.uptime
+  - weblogic.threads.busy
+  - weblogic.MemoryPressure
+  - weblogic.jvm.gc.collection_count
+  - weblogic.jvm.open.fds
+  - weblogic.cache.access_count
+  - weblogic.jms_servers.count
+  - weblogic.jvm.mem.heap_used
+  - weblogic.threads.count
+  - weblogic.servlet.request_count
+  - weblogic.active_sessions.count
+  - weblogic.jvm.mem.heap_committed
+  - weblogic.jvm.mem.non_heap_used
+  - weblogic.jvm.threads
+  - weblogic.servlet.error_count
+  - weblogic.servlet.processing_time

@@ -1,0 +1,5 @@
+  plugin-name: "cpu"
+  freq_secs: "60"
+  metrics:
+#This doesn't include steal time 
+  - system_cpu_usage_pct

@@ -1,0 +1,49 @@
+plugin-name: "containerd"
+freq_secs: "60"
+metrics:
+  # HugeTLB Metrics
+  - containerd_hugetlb_failcnt
+  - containerd_hugetlb_max
+  - containerd_hugetlb_usage
+  # Memory Metrics
+  - containerd_memory_usage
+  - containerd_memory_usage_failcnt
+  - containerd_memory_usage_limit
+  - containerd_memory_usage_max
+  - containerd_memory_cache
+  - containerd_memory_rss
+  - containerd_memory_rss_huge
+  - containerd_memory_dirty
+  - containerd_memory_swap_usage
+  - containerd_memory_swap_failcnt
+  - containerd_memory_swap_limit
+  - containerd_memory_swap_max
+  - containerd_memory_kernel_usage
+  - containerd_memory_kernel_failcnt
+  - containerd_memory_kernel_limit
+  - containerd_memory_kernel_max
+  - containerd_memory_kernel_tcp_usage
+  - containerd_memory_kernel_tcp_failcnt
+  - containerd_memory_kernel_tcp_limit
+  - containerd_memory_kernel_tcp_max
+  # CPU Metrics
+  - containerd_cpu_throttling_throttledTime
+  - containerd_cpu_usage_system
+  - containerd_cpu_usage_total
+  - containerd_cpu_usage_user
+  # Block I/O Metrics
+  - containerd_blkio_service_recursive
+  - containerd_blkio_serviced_recursive
+  - containerd_blkio_queued_recursive
+  - containerd_blkio_service_time_recursive
+  - containerd_blkio_wait_time_recursive
+  - containerd_blkio_merged_recursive
+  - containerd_blkio_time_recursive
+  - containerd_blkio_sectors_recursive
+  # Other Metrics
+  - containerd_proc_open_fds
+  - containerd_uptime
+  # Host Level Metrics
+  - containerd_containers_running
+  - containerd_containers_stopped
+  - containerd_image_size_mbytes

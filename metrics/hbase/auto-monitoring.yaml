@@ -1,0 +1,42 @@
+plugin-name: "Hbase"
+freq_secs: "60"
+metrics:
+  - hbase_Server_averageLoad
+  - hbase_Server_clusterRequests
+  - hbase_Server_numDeadRegionServers
+  - hbase_Server_numRegionServers
+  - hbase_Jvm_ThreadsRunnable
+  - hbase_Jvm_ThreadsTimedWaiting
+  - hbase_Jvm_ThreadsBlocked
+  - hbase_Jvm_ThreadsWaiting
+  - hbase_Jvm_MemHeapUsedM
+  - hbase_Jvm_MemHeapCommittedM
+  - hbase_IPC_receivedBytes
+  - hbase_IPC_sentBytes
+  - hbase_IPC_OutOfOrderScannerNextException
+  - hbase_IPC_UnknownScannerException
+  - hbase_IPC_RegionTooBusyException
+  - hbase_IPC_numOpenConnections
+  - hbase_IPC_TotalCallTime_num_ops
+  - hbase_IPC_numActiveHandler
+  - hbase_IPC_numCallsInReplicationQueue
+  - hbase_RegionServer_blockCacheCount
+  - hbase_RegionServer_blockCacheEvictionCount
+  - hbase_RegionServer_blockCacheFreeSize
+  - hbase_RegionServer_blockCacheExpressHitPercent
+  - hbase_RegionServer_blockCacheHitCount
+  - hbase_RegionServer_blockCacheCountHitPercent
+  - hbase_RegionServer_blockCacheMissCount
+  - hbase_RegionServer_blockCacheSize
+  - hbase_RegionServer_slowGetCount
+  - hbase_RegionServer_slowPutCount
+  - hbase_RegionServer_slowIncrementCount
+  - hbase_RegionServer_slowDeleteCount
+  - hbase_FileSystem_HlogSplitSize_mean
+  - hbase_FileSystem_HlogSplitSize_min
+  - hbase_FileSystem_HlogSplitSize_max
+  - hbase_FileSystem_HlogSplitSize_num_ops
+  - hbase_FileSystem_HlogSplitTime_mean
+  - hbase_FileSystem_HlogSplitTime_min
+  - hbase_FileSystem_HlogSplitTime_max
+  - hbase_FileSystem_HlogSplitTime_num_ops

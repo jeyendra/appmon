@@ -1,0 +1,18 @@
+  plugin-name: "apache"
+  freq_secs: "60"
+  metrics:
+  - apache_conns_total
+  - apache_conns_async_writing
+  - apache_conns_async_keep_alive
+  - apache_conns_async_closing
+  - apache_net_bytes
+  - apache_net_bytes_per_sec
+  - apache_net_hits
+  - apache_net_request_per_sec
+  - apache_performance_cpu_load
+  - apache_performance_busy_workers
+  - apache_performance_idle_workers
+  - apache_performance_uptime
+  - apache_net_bytes_per_request
+  - apache_performance_open_slots
+  - apache_performance_scoreboard

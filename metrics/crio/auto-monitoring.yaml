@@ -1,0 +1,24 @@
+plugin-name: "crio"
+freq_secs: "60"
+metrics:
+  # Node Level Metrics
+  - crio_operations
+  - crio_operations_latency_microseconds
+  - crio_operations_latency_microseconds_sum
+  - crio_operations_latency_microseconds_count
+  - crio_operations_errors
+  - crio_image_pulls_by_digest
+  - crio_image_pulls_by_name
+  - crio_image_pulls_by_name_skipped
+  - crio_image_pulls_successes
+  - crio_image_pulls_failures
+  - crio_image_layer_reuse
+  - crio_cpu_time
+  - crio_mem_resident
+  - crio_mem_virtual
+  - crio_process_open_fds
+  # Container Level Metrics
+  - crio_cpu_usage_core
+  - crio_memory_working_set
+  - crio_filesystem_used
+  - crio_inodes_used

@@ -1,0 +1,17 @@
+plugin-name: "php-fpm"
+freq_secs: "60"
+metrics:
+  - php_fpm_pool
+  - php_fpm_process_manager
+  - php_fpm_start_time
+  - php_fpm_start_since
+  - php_fpm_accepted_conn
+  - php_fpm_listen_queue
+  - php_fpm_max_listen_queue
+  - php_fpm_listen_queue_len
+  - php_fpm_idle_processes
+  - php_fpm_active_processes
+  - php_fpm_total_processes
+  - php_fpm_max_active_processes
+  - php_fpm_max_children_reached
+  - php_fpm_slow_requests

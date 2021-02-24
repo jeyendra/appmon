@@ -1,0 +1,23 @@
+plugin-name: "K8sApiServer"
+freq_secs: "60"
+metrics:
+  - kube_api_go_threads
+  - kube_api_authenticated_user_requests
+  - kube_api_audit_event_total
+  - kube_api_rest_client_requests_total
+  - kube_api_inflight_requests
+  - kube_api_goroutines
+  - kube_api_etcd_object_counts
+  - kube_api_longrunning_gauge
+  - kube_api_step_admission_duration_seconds_sum
+  - kube_api_step_admission_duration_seconds_count
+  - kube_api_step_admission_duration_seconds_summary_sum
+  - kube_api_step_admission_duration_seconds_summary_count
+  - kube_api_step_admission_duration_seconds_summary
+  - kube_api_controller_admission_duration_seconds_sum
+  - kube_api_controller_admission_duration_seconds_count
+#  Deprecated from 1.14
+#  - kube_api_http_requests
+#  - kube_api_dropped_requests
+#  - kube_api_request_count
+#  - kube_api_service_registration_controller_depth

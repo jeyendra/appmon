@@ -1,0 +1,8 @@
+  plugin-name: "postfix"
+  freq_secs: "60"
+  metrics:
+  - postfix_queues_incoming
+  - postfix_queues_active
+  - postfix_queues_maildrop
+  - postfix_queues_deferred
+  - postfix_queues_bounce

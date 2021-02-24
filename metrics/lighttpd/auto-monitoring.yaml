@@ -1,0 +1,37 @@
+plugin-name: "Lighttpd"
+freq_secs: "60"
+metrics:
+  # Metrics for Lighttpd Version 1
+  - lighttpd_uptime
+  - lighttpd_bytes_rate
+  - lighttpd_bytes_per_request
+  - lighttpd_requests_rate
+  - lighttpd_total_accesses
+  - lighttpd_total_kbytes
+  - lighttpd_open_slots
+  - lighttpd_busy_servers
+  - lighttpd_idle_servers
+  # Metrics for Lighttpd Version 2
+  - lighttpd_connections_state_start
+  - lighttpd_connections_state_read_header
+  - lighttpd_connections_state_handle_request
+  - lighttpd_connections_state_write_response
+  - lighttpd_connections_state_keep_alive
+  - lighttpd_requests_avg
+  - lighttpd_traffic_out_avg
+  - lighttpd_traffic_in_avg
+  - lighttpd_connections_avg
+  - lighttpd_requests_avg_5sec
+  - lighttpd_traffic_out_avg_5sec
+  - lighttpd_traffic_in_avg_5sec
+  - lighttpd_connections_avg_5sec
+  - lighttpd_memory_usage
+  - lighttpd_requests_abs
+  - lighttpd_traffic_out_abs
+  - lighttpd_traffic_in_abs
+  - lighttpd_connections_abs
+  - lighttpd_status_1xx
+  - lighttpd_status_2xx
+  - lighttpd_status_3xx
+  - lighttpd_status_4xx
+  - lighttpd_status_5xx

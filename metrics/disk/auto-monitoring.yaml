@@ -1,0 +1,7 @@
+  plugin-name: "disk"
+  freq_secs: "60"
+  metrics:
+#Host level Metrics 
+  - system_disk_used_pct
+  - system_disk_used_space
+  - system_disk_free_space

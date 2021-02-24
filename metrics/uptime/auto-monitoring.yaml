@@ -1,0 +1,5 @@
+  plugin-name: "uptime"
+  freq_secs: "60"
+  metrics:
+#Host level Metrics 
+  - system_uptime

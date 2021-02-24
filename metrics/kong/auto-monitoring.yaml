@@ -1,0 +1,11 @@
+  plugin-name: "kong"
+  freq_secs: "60"
+  metrics:
+  - kong_connections_accepted
+  - kong_connections_active
+  - kong_connections_handled
+  - kong_connections_reading
+  - kong_connections_waiting
+  - kong_connections_writing
+  - kong_total_requests
+  - kong_database_reachable

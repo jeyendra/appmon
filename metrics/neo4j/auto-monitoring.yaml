@@ -1,0 +1,27 @@
+plugin-name: "neo4j"
+freq_secs: "60"
+metrics:
+  - neo4j_transaction_committed_total
+  - neo4j_transaction_rollbacks_read_total
+  - neo4j_transaction_active_write
+  - neo4j_transaction_peak_concurrent_total
+  - neo4j_cypher_replan_events_total
+  - neo4j_store_size_database
+  - neo4j_pool_transaction_customers_total_used
+  - neo4j_pool_transaction_movies_total_used
+  - neo4j_transaction_committed_write_total
+  - neo4j_transaction_rollbacks_write_total
+  - neo4j_transaction_committed_read_total
+  - neo4j_ids_in_use_property
+  - neo4j_transaction_rollbacks_total
+  - neo4j_transaction_last_committed_tx_id_total
+  - neo4j_store_size_total
+  - neo4j_pool_transaction_system_total_used
+  - neo4j_check_point_total_time_total
+  - neo4j_transaction_active_read
+  - neo4j_ids_in_use_relationship
+  - neo4j_pool_transaction_  - neo4j_total_used
+  - neo4j_check_point_duration
+  - neo4j_ids_in_use_node
+configs:
+  prometheus_metrics_port: 2004

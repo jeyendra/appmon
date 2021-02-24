@@ -1,0 +1,28 @@
+plugin-name: "Solr"
+freq_secs: "60"
+metrics:
+  - solr_CACHE_cumulative_evictions
+  - solr_CACHE_cumulative_hits
+  - solr_CACHE_cumulative_inserts
+  - solr_CACHE_cumulative_lookups
+  - solr_QUERY_requestTimes_MeanRate
+  - solr_QUERY_requestTimes_Mean
+  - solr_QUERY_errors
+  - solr_QUERY_requests
+  - solr_QUERY_totalTime
+  - solr_QUERY_timeouts
+  - solr_searcher_maxDoc
+  - solr_searcher_numDocs
+  - solr_searcher_warmupTime
+  - solr_documentCache_cumulative_evictions
+  - solr_documentCache_cumulative_inserts
+  - solr_documentCache_cumulative_lookups
+  - solr_documentCache_cumulative_hits
+  - solr_filterCache_cumulative_hits
+  - solr_filterCache_cumulative_lookups
+  - solr_filterCache_cumulative_evictions
+  - solr_filterCache_cumulative_inserts
+  - solr_queryResultCache_cumulative_inserts
+  - solr_queryResultCache_cumulative_evictions
+  - solr_queryResultCache_cumulative_hits
+  - solr_queryResultCache_cumulative_lookups

@@ -1,0 +1,26 @@
+plugin-name: "haproxy"
+freq_secs: "60"
+metrics:
+  - haproxy_status
+  - haproxy_requests_queue
+  - haproxy_session_current
+  - haproxy_session_rate
+  - haproxy_mbytes_rate_in
+  - haproxy_mbytes_rate_out
+  - haproxy_denied_rate_req
+  - haproxy_denied_rate_resp
+  - haproxy_errors_rate_req
+  - haproxy_errors_rate_conn
+  - haproxy_errors_rate_resp
+  - haproxy_warning_rate_retr
+  - haproxy_warning_rate_redis
+  - haproxy_requests_rate
+  - haproxy_lastchk_time
+  - haproxy_servers_active
+  - haproxy_servers_backup
+  - haproxy_http_errors_1xx
+  - haproxy_http_errors_2xx
+  - haproxy_http_errors_3xx
+  - haproxy_http_errors_4xx
+  - haproxy_http_errors_5xx
+

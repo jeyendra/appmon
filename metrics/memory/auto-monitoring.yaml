@@ -1,0 +1,8 @@
+  plugin-name: "memory"
+  freq_secs: "60"
+  metrics:
+#Host level Metrics 
+  - system_memory_usage_pct
+  - system_swap_usage_pct
+  - system_memory_used_space
+  - system_swap_used_space

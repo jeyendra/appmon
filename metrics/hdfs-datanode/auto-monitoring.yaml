@@ -1,0 +1,17 @@
+  plugin-name: "hdfs-datanode"
+  freq_secs: "60"
+  metrics:
+  - hdfs_datanode_dfs_remaining
+  - hdfs_datanode_dfs_remaining_percent
+  - hdfs_datanode_dfs_capacity
+  - hdfs_datanode_dfs_used
+  - hdfs_datanode_dfs_used_percent
+  - hdfs_datanode_cache_capacity
+  - hdfs_datanode_cache_used
+  - hdfs_datanode_num_failed_volumes
+  - hdfs_datanode_last_volume_failure_date
+  - hdfs_datanode_estimated_capacity_lost_total
+  - hdfs_datanode_num_blocks_cached
+  - hdfs_datanode_num_blocks_failed_to_cache
+  - hdfs_datanode_num_blocks_failed_to_uncache
+  - hdfs_datanode_process_cpu_load

@@ -1,0 +1,27 @@
+plugin-name: "ActiveMQ"
+freq_secs: "60"
+metrics:
+  - activemq_Broker_MemoryPercentUsage
+  - activemq_Broker_StorePercentUsage
+  - activemq_Broker_TempPercentUsage
+  - activemq_jvm_GarbageCollector_CollectionCount
+  - activemq_jvm_GarbageCollector_CollectionTime
+  - activemq_jvm_Memory_HeapMemoryUsage_committed
+  - activemq_jvm_Memory_HeapMemoryUsage_used
+  - activemq_jvm_Memory_NonHeapMemoryUsage_committed
+  - activemq_jvm_Memory_NonHeapMemoryUsage_used
+  - activemq_jvm_OperatingSystem_OpenFileDescriptorCount
+  - activemq_jvm_Threading_ThreadCount
+  - activemq_jvm_Runtime_Uptime
+  - activemq_AverageEnqueueTime
+  - activemq_MaxEnqueueTime
+  - activemq_MemoryPercentUsage
+  - activemq_Queue_ConsumerCount
+  - activemq_Queue_ProducerCount
+  - activemq_Queue_MinEnqueueTime
+  - activemq_Queue_QueueSize
+  - activemq_Queue_DequeueCount
+  - activemq_Queue_DispatchCount
+  - activemq_Queue_EnqueueCount
+  - activemq_Queue_ExpiredCount
+  - activemq_Queue_InFlightCount

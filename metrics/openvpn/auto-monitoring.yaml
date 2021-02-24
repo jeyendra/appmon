@@ -1,0 +1,7 @@
+plugin-name: "openvpn"
+freq_secs: "60"
+metrics:
+  - openvpn_rate_bytes_received
+  - openvpn_rate_bytes_sent
+  - openvpn_current_clients
+  - openvpn_current_routes

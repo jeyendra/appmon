@@ -1,0 +1,668 @@
+plugin-name: "Varnish"
+freq_secs: "60"
+metrics:
+  # metrics for version 5 and above
+  - varnish_mgt_uptime
+  - varnish_mgt_child_start
+  - varnish_mgt_child_exit
+  - varnish_mgt_child_stop
+  - varnish_mgt_child_died
+  - varnish_mgt_child_dump
+  - varnish_mgt_child_panic
+  - varnish_main_summs
+  - varnish_main_uptime
+  - varnish_main_sess_conn
+  - varnish_main_sess_drop
+  - varnish_main_sess_fail
+  - varnish_main_client_req_400
+  - varnish_main_client_req_417
+  - varnish_main_client_req
+  - varnish_main_cache_hit
+  - varnish_main_cache_hitpass
+  - varnish_main_cache_hitmiss
+  - varnish_main_cache_miss
+  - varnish_main_backend_conn
+  - varnish_main_backend_unhealthy
+  - varnish_main_backend_busy
+  - varnish_main_backend_fail
+  - varnish_main_backend_reuse
+  - varnish_main_backend_recycle
+  - varnish_main_backend_retry
+  - varnish_main_fetch_head
+  - varnish_main_fetch_length
+  - varnish_main_fetch_chunked
+  - varnish_main_fetch_eof
+  - varnish_main_fetch_bad
+  - varnish_main_fetch_none
+  - varnish_main_fetch_1xx
+  - varnish_main_fetch_204
+  - varnish_main_fetch_304
+  - varnish_main_fetch_failed
+  - varnish_main_fetch_no_thread
+  - varnish_main_pools
+  - varnish_main_threads
+  - varnish_main_threads_limited
+  - varnish_main_threads_created
+  - varnish_main_threads_destroyed
+  - varnish_main_threads_failed
+  - varnish_main_thread_queue_len
+  - varnish_main_busy_sleep
+  - varnish_main_busy_wakeup
+  - varnish_main_busy_killed
+  - varnish_main_sess_queued
+  - varnish_main_sess_dropped
+  - varnish_main_req_dropped
+  - varnish_main_n_object
+  - varnish_main_n_vampireobject
+  - varnish_main_n_objectcore
+  - varnish_main_n_objecthead
+  - varnish_main_n_backend
+  - varnish_main_n_expired
+  - varnish_main_n_lru_nuked
+  - varnish_main_n_lru_moved
+  - varnish_main_losthdr
+  - varnish_main_s_sess
+  - varnish_main_s_pipe
+  - varnish_main_s_pass
+  - varnish_main_s_fetch
+  - varnish_main_s_synth
+  - varnish_main_s_req_hdrbytes
+  - varnish_main_s_req_bodybytes
+  - varnish_main_s_resp_hdrbytes
+  - varnish_main_s_resp_bodybytes
+  - varnish_main_s_pipe_hdrbytes
+  - varnish_main_s_pipe_in
+  - varnish_main_s_pipe_out
+  - varnish_main_sess_closed
+  - varnish_main_sess_closed_err
+  - varnish_main_sess_readahead
+  - varnish_main_sess_herd
+  - varnish_main_sc_rem_close
+  - varnish_main_sc_req_close
+  - varnish_main_sc_req_http10
+  - varnish_main_sc_rx_bad
+  - varnish_main_sc_rx_body
+  - varnish_main_sc_rx_junk
+  - varnish_main_sc_rx_overflow
+  - varnish_main_sc_rx_timeout
+  - varnish_main_sc_tx_pipe
+  - varnish_main_sc_tx_error
+  - varnish_main_sc_tx_eof
+  - varnish_main_sc_resp_close
+  - varnish_main_sc_overload
+  - varnish_main_sc_pipe_overflow
+  - varnish_main_sc_range_short
+  - varnish_main_sc_req_http20
+  - varnish_main_sc_vcl_failure
+  - varnish_main_shm_records
+  - varnish_main_shm_writes
+  - varnish_main_shm_flushes
+  - varnish_main_shm_cont
+  - varnish_main_shm_cycles
+  - varnish_main_backend_req
+  - varnish_main_n_vcl
+  - varnish_main_n_vcl_avail
+  - varnish_main_n_vcl_discard
+  - varnish_main_vcl_fail
+  - varnish_main_bans
+  - varnish_main_bans_completed
+  - varnish_main_bans_obj
+  - varnish_main_bans_req
+  - varnish_main_bans_added
+  - varnish_main_bans_deleted
+  - varnish_main_bans_tested
+  - varnish_main_bans_obj_killed
+  - varnish_main_bans_lurker_tested
+  - varnish_main_bans_tests_tested
+  - varnish_main_bans_lurker_tests_tested
+  - varnish_main_bans_lurker_obj_killed
+  - varnish_main_bans_lurker_obj_killed_cutoff
+  - varnish_main_bans_dups
+  - varnish_main_bans_lurker_contention
+  - varnish_main_bans_persisted_bytes
+  - varnish_main_bans_persisted_fragmentation
+  - varnish_main_n_purges
+  - varnish_main_n_obj_purged
+  - varnish_main_exp_mailed
+  - varnish_main_exp_received
+  - varnish_main_hcb_nolock
+  - varnish_main_hcb_lock
+  - varnish_main_hcb_insert
+  - varnish_main_esi_errors
+  - varnish_main_esi_warnings
+  - varnish_main_vmods
+  - varnish_main_n_gzip
+  - varnish_main_n_gunzip
+  - varnish_main_n_test_gunzip
+  - varnish_lck_backend_creat
+  - varnish_lck_backend_destroy
+  - varnish_lck_backend_locks
+  - varnish_lck_backend_tcp_creat
+  - varnish_lck_backend_tcp_destroy
+  - varnish_lck_backend_tcp_locks
+  - varnish_lck_ban_creat
+  - varnish_lck_ban_destroy
+  - varnish_lck_ban_locks
+  - varnish_lck_busyobj_creat
+  - varnish_lck_busyobj_destroy
+  - varnish_lck_busyobj_locks
+  - varnish_lck_cli_creat
+  - varnish_lck_cli_destroy
+  - varnish_lck_cli_locks
+  - varnish_lck_exp_creat
+  - varnish_lck_exp_destroy
+  - varnish_lck_exp_locks
+  - varnish_lck_hcb_creat
+  - varnish_lck_hcb_destroy
+  - varnish_lck_hcb_locks
+  - varnish_lck_lru_creat
+  - varnish_lck_lru_destroy
+  - varnish_lck_lru_locks
+  - varnish_lck_mempool_creat
+  - varnish_lck_mempool_destroy
+  - varnish_lck_mempool_locks
+  - varnish_lck_objhdr_creat
+  - varnish_lck_objhdr_destroy
+  - varnish_lck_objhdr_locks
+  - varnish_lck_pipestat_creat
+  - varnish_lck_pipestat_destroy
+  - varnish_lck_pipestat_locks
+  - varnish_lck_sess_creat
+  - varnish_lck_sess_destroy
+  - varnish_lck_sess_locks
+  - varnish_lck_vbe_creat
+  - varnish_lck_vbe_destroy
+  - varnish_lck_vbe_locks
+  - varnish_lck_vcapace_creat
+  - varnish_lck_vcapace_destroy
+  - varnish_lck_vcapace_locks
+  - varnish_lck_vcl_creat
+  - varnish_lck_vcl_destroy
+  - varnish_lck_vcl_locks
+  - varnish_lck_vxid_creat
+  - varnish_lck_vxid_destroy
+  - varnish_lck_vxid_locks
+  - varnish_lck_waiter_creat
+  - varnish_lck_waiter_destroy
+  - varnish_lck_waiter_locks
+  - varnish_lck_wq_creat
+  - varnish_lck_wq_destroy
+  - varnish_lck_wq_locks
+  - varnish_lck_wstat_creat
+  - varnish_lck_wstat_destroy
+  - varnish_lck_wstat_locks
+  - varnish_mempool_busyobj_live
+  - varnish_mempool_busyobj_pool
+  - varnish_mempool_busyobj_sz_wanted
+  - varnish_mempool_busyobj_sz_actual
+  - varnish_mempool_busyobj_allocs
+  - varnish_mempool_busyobj_frees
+  - varnish_mempool_busyobj_recycle
+  - varnish_mempool_busyobj_timeout
+  - varnish_mempool_busyobj_toosmall
+  - varnish_mempool_busyobj_surplus
+  - varnish_mempool_busyobj_randry
+  - varnish_mempool_req0_live
+  - varnish_mempool_req0_pool
+  - varnish_mempool_req0_sz_wanted
+  - varnish_mempool_req0_sz_actual
+  - varnish_mempool_req0_allocs
+  - varnish_mempool_req0_frees
+  - varnish_mempool_req0_recycle
+  - varnish_mempool_req0_timeout
+  - varnish_mempool_req0_toosmall
+  - varnish_mempool_req0_surplus
+  - varnish_mempool_req0_randry
+  - varnish_mempool_sess0_live
+  - varnish_mempool_sess0_pool
+  - varnish_mempool_sess0_sz_wanted
+  - varnish_mempool_sess0_sz_actual
+  - varnish_mempool_sess0_allocs
+  - varnish_mempool_sess0_frees
+  - varnish_mempool_sess0_recycle
+  - varnish_mempool_sess0_timeout
+  - varnish_mempool_sess0_toosmall
+  - varnish_mempool_sess0_surplus
+  - varnish_mempool_sess0_randry
+  - varnish_lck_sma_creat
+  - varnish_lck_sma_destroy
+  - varnish_lck_sma_locks
+  - varnish_sma_s0_c_req
+  - varnish_sma_s0_c_fail
+  - varnish_sma_s0_c_bytes
+  - varnish_sma_s0_c_freed
+  - varnish_sma_s0_g_alloc
+  - varnish_sma_s0_g_bytes
+  - varnish_sma_s0_g_space
+  - varnish_sma_transient_c_req
+  - varnish_sma_transient_c_fail
+  - varnish_sma_transient_c_bytes
+  - varnish_sma_transient_c_freed
+  - varnish_sma_transient_g_alloc
+  - varnish_sma_transient_g_bytes
+  - varnish_sma_transient_g_space
+  - varnish_mempool_req1_live
+  - varnish_mempool_req1_pool
+  - varnish_mempool_req1_sz_wanted
+  - varnish_mempool_req1_sz_actual
+  - varnish_mempool_req1_allocs
+  - varnish_mempool_req1_frees
+  - varnish_mempool_req1_recycle
+  - varnish_mempool_req1_timeout
+  - varnish_mempool_req1_toosmall
+  - varnish_mempool_req1_surplus
+  - varnish_mempool_req1_randry
+  - varnish_mempool_sess1_live
+  - varnish_mempool_sess1_pool
+  - varnish_mempool_sess1_sz_wanted
+  - varnish_mempool_sess1_sz_actual
+  - varnish_mempool_sess1_allocs
+  - varnish_mempool_sess1_frees
+  - varnish_mempool_sess1_recycle
+  - varnish_mempool_sess1_timeout
+  - varnish_mempool_sess1_toosmall
+  - varnish_mempool_sess1_surplus
+  - varnish_mempool_sess1_randry
+  - varnish_vbe_boot_default_happy
+  - varnish_vbe_boot_default_bereq_hdrbytes
+  - varnish_vbe_boot_default_bereq_bodybytes
+  - varnish_vbe_boot_default_beresp_hdrbytes
+  - varnish_vbe_boot_default_beresp_bodybytes
+  - varnish_vbe_boot_default_pipe_hdrbytes
+  - varnish_vbe_boot_default_pipe_out
+  - varnish_vbe_boot_default_pipe_in
+  - varnish_vbe_boot_default_conn
+  - varnish_vbe_boot_default_req
+  # Metrics for version 4
+  # - varnish_cache_misses
+  # - varnish_cache_hits
+  # - varnish_backend_connections
+  # - varnish_backend_busy
+  # - varnish_backend_fail
+  # - varnish_backend_toolate
+  # - varnish_backend_recycle
+  # - varnish_backend_req
+  # - varnish_client_conns_accepted
+  # - varnish_client_conns_dropped
+  # - varnish_client_requests
+  # - varnish_rate_sessions
+  # - varnish_rate_requests
+  # - varnish_rate_fetches
+  # - varnish_rate_hdrbytes
+  # - varnish_rate_bodybytes
+  # - varnish_struct_objects
+  # - varnish_worker_threads
+  # - varnish_worker_threads_created
+  # - varnish_worker_threads_failed
+  # - varnish_lru_objects_nuked
+  # - varnish_lru_objects_moved
+  # - varnish_expired_objects
+  # - varnish_uptime
+  # - varnish_rate_esi_errors
+  # - varnish_cache_hit_ratio
+  # - varnish_cache_miss_ratio
+  # - varnish_client_connections_ratio
+  # - varnish_backend_conns_success_ratio
+  # - varnish_work_thread_ratio
+  # - varnish_bans
+  # - varnish_bans_added
+  # - varnish_bans_completed
+  # - varnish_bans_deleted
+  # - varnish_bans_dups
+  # - varnish_bans_lurker_contention
+  # - varnish_bans_lurker_obj_killed
+  # - varnish_bans_lurker_tested
+  # - varnish_bans_lurker_tests_tested
+  # - varnish_bans_obj
+  # - varnish_bans_obj_killed
+  # - varnish_bans_persisted_bytes
+  # - varnish_bans_persisted_fragmentation
+  # - varnish_bans_req
+  # - varnish_bans_tested
+  # - varnish_bans_tests_tested
+  # - varnish_busy_sleep
+  # - varnish_busy_wakeup
+  # - varnish_cache_hitpass
+  # - varnish_client_req_400
+  # - varnish_client_req_411
+  # - varnish_client_req_413
+  # - varnish_client_req_417
+  # - varnish_exp_mailed
+  # - varnish_exp_received
+  # - varnish_lck_pipestat_creat
+  # - varnish_lck_busyobj_creat
+  # - varnish_lck_busyobj_destroy
+  # - varnish_lck_busyobj_locks
+  # - varnish_lck_mempool_creat
+  # - varnish_lck_mempool_destroy
+  # - varnish_lck_mempool_locks
+  # - varnish_lck_nbusyobj_creat
+  # - varnish_lck_nbusyobj_destroy
+  # - varnish_lck_nbusyobj_locks
+  # - varnish_fetch_no_thread
+  # - varnish_lck_pipestat_destroy
+  # - varnish_lck_pipestat_locks
+  # - varnish_lck_sess_creat
+  # - varnish_lck_sess_destroy
+  # - varnish_lck_sess_locks
+  # - varnish_lck_vcapace_creat
+  # - varnish_lck_vcapace_destroy
+  # - varnish_lck_vcapace_locks
+  # - varnish_lck_vxid_creat
+  # - varnish_lck_vxid_destroy
+  # - varnish_lck_vxid_locks
+  # - varnish_mempool_busyobj_allocs
+  # - varnish_mempool_busyobj_frees
+  # - varnish_mempool_busyobj_live
+  # - varnish_mempool_busyobj_pool
+  # - varnish_mempool_busyobj_randry
+  # - varnish_mempool_busyobj_recycle
+  # - varnish_mempool_busyobj_surplus
+  # - varnish_mempool_busyobj_sz_needed
+  # - varnish_mempool_busyobj_sz_wanted
+  # - varnish_mempool_busyobj_timeout
+  # - varnish_mempool_busyobj_toosmall
+  # - varnish_mempool_req0_allocs
+  # - varnish_mempool_req0_frees
+  # - varnish_mempool_req0_live
+  # - varnish_mempool_req0_pool
+  # - varnish_mempool_req0_randry
+  # - varnish_mempool_req0_recycle
+  # - varnish_mempool_req0_surplus
+  # - varnish_mempool_req0_sz_needed
+  # - varnish_mempool_req0_sz_wanted
+  # - varnish_mempool_req0_timeout
+  # - varnish_mempool_req0_toosmall
+  # - varnish_mempool_req1_allocs
+  # - varnish_mempool_req1_frees
+  # - varnish_mempool_req1_live
+  # - varnish_mempool_req1_pool
+  # - varnish_mempool_req1_randry
+  # - varnish_mempool_req1_recycle
+  # - varnish_mempool_req1_surplus
+  # - varnish_mempool_req1_sz_needed
+  # - varnish_mempool_req1_sz_wanted
+  # - varnish_mempool_req1_timeout
+  # - varnish_mempool_req1_toosmall
+  # - varnish_mempool_sess0_allocs
+  # - varnish_mempool_sess0_frees
+  # - varnish_mempool_sess0_live
+  # - varnish_mempool_sess0_pool
+  # - varnish_mempool_sess0_randry
+  # - varnish_mempool_sess0_recycle
+  # - varnish_mempool_sess0_surplus
+  # - varnish_mempool_sess0_sz_needed
+  # - varnish_mempool_sess0_sz_wanted
+  # - varnish_mempool_sess0_timeout
+  # - varnish_mempool_sess0_toosmall
+  # - varnish_mempool_sess1_allocs
+  # - varnish_mempool_sess1_frees
+  # - varnish_mempool_sess1_live
+  # - varnish_mempool_sess1_pool
+  # - varnish_mempool_sess1_randry
+  # - varnish_mempool_sess1_recycle
+  # - varnish_mempool_sess1_surplus
+  # - varnish_mempool_sess1_sz_needed
+  # - varnish_mempool_sess1_sz_wanted
+  # - varnish_mempool_sess1_timeout
+  # - varnish_mempool_sess1_toosmall
+  # - varnish_mempool_vbc_allocs
+  # - varnish_mempool_vbc_frees
+  # - varnish_mempool_vbc_live
+  # - varnish_mempool_vbc_pool
+  # - varnish_mempool_vbc_randry
+  # - varnish_mempool_vbc_recycle
+  # - varnish_mempool_vbc_surplus
+  # - varnish_mempool_vbc_sz_needed
+  # - varnish_mempool_vbc_sz_wanted
+  # - varnish_mempool_vbc_timeout
+  # - varnish_mempool_vbc_toosmall
+  # - varnish_mgt_child_died
+  # - varnish_mgt_child_dump
+  # - varnish_mgt_child_exit
+  # - varnish_mgt_child_panic
+  # - varnish_mgt_child_start
+  # - varnish_mgt_child_stop
+  # - varnish_mgt_uptime
+  # - varnish_n_obj_purged
+  # - varnish_n_purges
+  # - varnish_pools
+  # - varnish_s_pipe_hdrbytes
+  # - varnish_s_pipe_in
+  # - varnish_s_pipe_out
+  # - varnish_s_req_bodybytes
+  # - varnish_s_req_hdrbytes
+  # - varnish_s_resp_bodybytes
+  # - varnish_s_resp_hdrbytes
+  # - varnish_s_synth
+  # - varnish_sess_conn
+  # - varnish_sess_drop
+  # - varnish_sess_dropped
+  # - varnish_sess_fail
+  # - varnish_sess_pipe_overflow
+  # - varnish_sess_queued
+  # - varnish_thread_queue_len
+  # - varnish_threads
+  # - varnish_threads_created
+  # - varnish_threads_destroyed
+  # - varnish_threads_failed
+  # - varnish_threads_limited
+  # - varnish_vmods
+  # - varnish_vsm_cooling
+  # - varnish_vsm_free
+  # - varnish_vsm_overflow
+  # - varnish_vsm_overflowed
+  # - varnish_vsm_used
+  # Metrics for legacy versions
+  # - varnish_cache_misses
+  # - varnish_cache_hits
+  # - varnish_backend_connections
+  # - varnish_backend_busy
+  # - varnish_backend_fail
+  # - varnish_backend_toolate
+  # - varnish_backend_recycle
+  # - varnish_backend_req
+  # - varnish_client_conns_accepted
+  # - varnish_client_conns_dropped
+  # - varnish_client_requests
+  # - varnish_rate_sessions
+  # - varnish_rate_requests
+  # - varnish_rate_fetches
+  # - varnish_rate_hdrbytes
+  # - varnish_rate_bodybytes
+  # - varnish_struct_objects
+  # - varnish_worker_threads
+  # - varnish_worker_threads_created
+  # - varnish_worker_threads_failed
+  # - varnish_abandoned_work_requests
+  # - varnish_lru_objects_nuked
+  # - varnish_lru_objects_moved
+  # - varnish_expired_objects
+  # - varnish_uptime
+  # - varnish_rate_esi_errors
+  # - varnish_cache_hit_ratio
+  # - varnish_cache_miss_ratio
+  # - varnish_client_connections_ratio
+  # - varnish_backend_conns_success_ratio
+  # - varnish_work_thread_ratio
+  # - varnish_client_drop_late
+  # - varnish_dir_dns_cache_full
+  # - varnish_dir_dns_failed
+  # - varnish_dir_dns_hit
+  # - varnish_dir_dns_lookups
+  # - varnish_accept_fail
+  # - varnish_backend_retry
+  # - varnish_backend_reuse
+  # - varnish_backend_unhealthy
+  # - varnish_esi_errors
+  # - varnish_esi_warnings
+  # - varnish_fetch_1xx
+  # - varnish_fetch_204
+  # - varnish_fetch_304
+  # - varnish_fetch_bad
+  # - varnish_fetch_chunked
+  # - varnish_fetch_close
+  # - varnish_fetch_eof
+  # - varnish_fetch_failed
+  # - varnish_fetch_head
+  # - varnish_fetch_length
+  # - varnish_fetch_oldhttp
+  # - varnish_fetch_zero
+  # - varnish_hcb_insert
+  # - varnish_hcb_lock
+  # - varnish_hcb_nolock
+  # - varnish_lck_backend_colls
+  # - varnish_lck_backend_creat
+  # - varnish_lck_backend_destroy
+  # - varnish_lck_backend_locks
+  # - varnish_lck_ban_colls
+  # - varnish_lck_ban_creat
+  # - varnish_lck_ban_destroy
+  # - varnish_lck_ban_locks
+  # - varnish_lck_cli_colls
+  # - varnish_lck_cli_creat
+  # - varnish_lck_cli_destroy
+  # - varnish_lck_cli_locks
+  # - varnish_lck_exp_colls
+  # - varnish_lck_exp_creat
+  # - varnish_lck_exp_destroy
+  # - varnish_lck_exp_locks
+  # - varnish_lck_hcb_colls
+  # - varnish_lck_hcb_creat
+  # - varnish_lck_hcb_destroy
+  # - varnish_lck_hcb_locks
+  # - varnish_lck_hcl_colls
+  # - varnish_lck_hcl_creat
+  # - varnish_lck_hcl_destroy
+  # - varnish_lck_hcl_locks
+  # - varnish_lck_herder_colls
+  # - varnish_lck_herder_creat
+  # - varnish_lck_herder_destroy
+  # - varnish_lck_herder_locks
+  # - varnish_lck_hsl_colls
+  # - varnish_lck_hsl_creat
+  # - varnish_lck_hsl_destroy
+  # - varnish_lck_hsl_locks
+  # - varnish_lck_lru_colls
+  # - varnish_lck_lru_creat
+  # - varnish_lck_lru_destroy
+  # - varnish_lck_lru_locks
+  # - varnish_lck_objhdr_colls
+  # - varnish_lck_objhdr_creat
+  # - varnish_lck_objhdr_destroy
+  # - varnish_lck_objhdr_locks
+  # - varnish_lck_sessmem_colls
+  # - varnish_lck_sessmem_creat
+  # - varnish_lck_sessmem_destroy
+  # - varnish_lck_sessmem_locks
+  # - varnish_lck_sma_colls
+  # - varnish_lck_sma_creat
+  # - varnish_lck_sma_destroy
+  # - varnish_lck_sma_locks
+  # - varnish_lck_smf_colls
+  # - varnish_lck_smf_creat
+  # - varnish_lck_smf_destroy
+  # - varnish_lck_smf_locks
+  # - varnish_lck_smp_colls
+  # - varnish_lck_smp_creat
+  # - varnish_lck_smp_destroy
+  # - varnish_lck_smp_locks
+  # - varnish_lck_sms_colls
+  # - varnish_lck_sms_creat
+  # - varnish_lck_sms_destroy
+  # - varnish_lck_sms_locks
+  # - varnish_lck_stat_colls
+  # - varnish_lck_stat_creat
+  # - varnish_lck_stat_destroy
+  # - varnish_lck_stat_locks
+  # - varnish_lck_vbe_colls
+  # - varnish_lck_vbe_creat
+  # - varnish_lck_vbe_destroy
+  # - varnish_lck_vbe_locks
+  # - varnish_lck_vbp_colls
+  # - varnish_lck_vbp_creat
+  # - varnish_lck_vbp_destroy
+  # - varnish_lck_vbp_locks
+  # - varnish_lck_vcl_colls
+  # - varnish_lck_vcl_creat
+  # - varnish_lck_vcl_destroy
+  # - varnish_lck_vcl_locks
+  # - varnish_lck_wq_colls
+  # - varnish_lck_wq_creat
+  # - varnish_lck_wq_destroy
+  # - varnish_lck_wq_locks
+  # - varnish_lck_wstat_colls
+  # - varnish_lck_wstat_creat
+  # - varnish_lck_wstat_destroy
+  # - varnish_lck_wstat_locks
+  # - varnish_losthdr
+  # - varnish_n_backend
+  # - varnish_n_ban
+  # - varnish_n_ban_add
+  # - varnish_n_ban_dups
+  # - varnish_n_ban_obj_test
+  # - varnish_n_ban_re_test
+  # - varnish_n_ban_retire
+  # - varnish_n_expired
+  # - varnish_n_gunzip
+  # - varnish_n_gzip
+  # - varnish_n_lru_moved
+  # - varnish_n_lru_nuked
+  # - varnish_n_object
+  # - varnish_n_objectcore
+  # - varnish_n_objecthead
+  # - varnish_n_objoverflow
+  # - varnish_n_objsendfile
+  # - varnish_n_objwrite
+  # - varnish_n_sess
+  # - varnish_n_sess_mem
+  # - varnish_n_vampireobject
+  # - varnish_n_vbc
+  # - varnish_n_vcl
+  # - varnish_n_vcl_avail
+  # - varnish_n_vcl_discard
+  # - varnish_n_waitinglist
+  # - varnish_n_wrk
+  # - varnish_n_wrk_create
+  # - varnish_n_wrk_drop
+  # - varnish_n_wrk_failed
+  # - varnish_n_wrk_lqueue
+  # - varnish_n_wrk_max
+  # - varnish_n_wrk_queued
+  # - varnish_s_bodybytes
+  # - varnish_s_fetch
+  # - varnish_s_hdrbytes
+  # - varnish_s_pass
+  # - varnish_s_pipe
+  # - varnish_s_req
+  # - varnish_s_sess
+  # - varnish_sess_closed
+  # - varnish_sess_herd
+  # - varnish_sess_linger
+  # - varnish_sess_pipeline
+  # - varnish_sess_readahead
+  # - varnish_shm_cont
+  # - varnish_shm_cycles
+  # - varnish_shm_flushes
+  # - varnish_shm_records
+  # - varnish_shm_writes
+  # - varnish_sma_s0_c_bytes
+  # - varnish_sma_s0_c_fail
+  # - varnish_sma_s0_c_freed
+  # - varnish_sma_s0_c_req
+  # - varnish_sma_s0_g_alloc
+  # - varnish_sma_s0_g_bytes
+  # - varnish_sma_s0_g_space
+  # - varnish_sma_transient_c_bytes
+  # - varnish_sma_transient_c_fail
+  # - varnish_sma_transient_c_freed
+  # - varnish_sma_transient_c_req
+  # - varnish_sma_transient_g_alloc
+  # - varnish_sma_transient_g_bytes
+  # - varnish_sma_transient_g_space
+  # - varnish_sms_balloc
+  # - varnish_sms_bfree
+  # - varnish_sms_nbytes
+  # - varnish_sms_nobj
+  # - varnish_sms_nreq
+

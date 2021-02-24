@@ -1,0 +1,8 @@
+  plugin-name: "cpu-load"
+  freq_secs: "60"
+  metrics:
+#CPU Load Metrics wrt all cpus
+  - system_cpu_load_1min
+  - system_cpu_load_5min
+  - system_cpu_load_15min
+  - system_cpu_count

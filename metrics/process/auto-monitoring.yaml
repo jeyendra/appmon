@@ -1,0 +1,24 @@
+  plugin-name: "process-stats"
+  freq_secs: "60"
+  metrics:
+#Host level Metrics 
+  - system_processes_CPU
+  - system_processes_TotalCPU
+  - system_processes_VirtualMemory
+  - system_processes_PhysicalMemory
+  - system_processes_MemoryUtilization
+  - system_processes_Threads
+  - system_processes_RunningProccess
+  - system_processes_TotalProccess
+  - system_processes_Openfds
+  configs:
+    default:
+      filter_top: 20
+      include_daemons: true
+      include_exclude_only: false
+    include_list:
+    #- processName1
+    #- processName2
+    exclude_list:
+    #- processName1
+    #- processName2

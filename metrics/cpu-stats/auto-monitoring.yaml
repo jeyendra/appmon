@@ -1,0 +1,12 @@
+  plugin-name: "cpu-stats"
+  freq_secs: "60"
+  metrics:
+#CPU Stats Metrics 
+  - system_cpu_usage_total
+  - system_cpu_usage_user
+  - system_cpu_usage_system
+  - system_cpu_usage_idle
+  - system_cpu_usage_iowait
+  - system_cpu_usage_irq
+  - system_cpu_usage_softirq
+  - system_cpu_usage_steal

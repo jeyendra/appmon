@@ -1,0 +1,14 @@
+plugin-name: "kyototycoon"
+freq_secs: "60"
+metrics:
+  - kyototycoon_serv_thread_count
+  - kyototycoon_serv_conn_count
+  - kyototycoon_cnt_get
+  - kyototycoon_cnt_get_misses
+  - kyototycoon_cnt_set_misses
+  - kyototycoon_cnt_set
+  - kyototycoon_cnt_remove
+  - kyototycoon_cnt_remove_misses
+  - kyototycoon_serv_task_count
+  - kyototycoon_db_total_size
+  - kyototycoon_db_total_count

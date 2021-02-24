@@ -1,0 +1,20 @@
+  plugin-name: "kvm"
+  freq_secs: "60"
+  metrics:
+  - kvm_total_domains
+  - kvm_domain_states
+  - kvm_cpu
+  - kvm_memory
+  - kvm_disk
+  - kvm_vm_interface_traffic_in
+  - kvm_vm_interface_traffic_out
+  - kvm_vm_interface_packets_in
+  - kvm_vm_interface_packets_out
+  - kvm_vm_interface_errors_in
+  - kvm_vm_interface_errors_out
+  - kvm_vm_interface_discards_in
+  - kvm_vm_interface_discards_out
+  - kvm_disk_io_rate_read
+  - kvm_disk_io_rate_write
+  - kvm_disk_io_ops
+
